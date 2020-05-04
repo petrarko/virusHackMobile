@@ -4,19 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-
-import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
@@ -41,11 +36,26 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private ExampleItem [] getArrayOfItems(){
+    public static ExampleItem [] getArrayOfItems(){
+        String [] ingr = {"лук-шалот – 100 г","чеснок – 3 зубчика","белые грибы свежие – 400 г","оливковое масло - 60 мл","рис круглозерный - 400 г","бульон овощной – 300-400 мл","масло сливочное – 40 г (не для постного варианта)","пармезан тертый – 70 г (не для постного варианта)","петрушка для подачи","оливковое масло «экстра вирджин» для подачи","соль, свежемолотый чёрный перец"};
         ExampleItem [] a = {
-                new ExampleItem("https://sun9-23.userapi.com/c850620/v850620759/4913e/sfE0Fl6HkFY.jpg", "t1", "t2"),
-                new ExampleItem("https://sun9-65.userapi.com/c844521/v844521549/1fa988/EVdmwdYJpiQ.jpg", "t3", "t4"),
+                new ExampleItem("https://www.gastronom.ru/binfiles/images/20190619/ba49be1a.jpg",
+                        "Паэлья на углях с колбасками и тремя видами мяса",
+                        "питательно, мясное, испанская кухня", "1", ingr),
+                new ExampleItem("https://www.gastronom.ru/binfiles/images/20160223/b18f9c36.jpg",
+                        "Ризотто с белыми грибами", "питательно, вегетарианское", "2",
+                        ingr)
         };
         return a;
+    }
+
+    public static ExampleItem  getRecipe(String id){
+        ExampleItem [] a = getArrayOfItems();
+        for(ExampleItem el : getArrayOfItems()){
+            if(el.getId().equals(id)){
+                return el;
+            }
+        }
+        throw new RuntimeException("Not found");
     }
 }

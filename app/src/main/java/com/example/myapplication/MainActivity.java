@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -64,6 +64,20 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.filters:
+                startActivity(new Intent(this, SettingsActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     @Override
@@ -83,14 +97,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle item selection
-//        switch (item.getItemId()) {
-//            case R.id.filters:
-//                Intent intent = new Intent(this, SettingsActivity.class);
-//                startActivity(intent);
-//        }
-//        return true;
-//    }
 }
