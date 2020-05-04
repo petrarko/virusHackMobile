@@ -6,71 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".Main2Activity">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-
-        </androidx.viewpager.widget.ViewPager>
-
-    <LinearLayout android:orientation="vertical"
-        android:layout_height="match_parent"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <ImageView
 
-            android:id="@+id/recipe_image"
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:gravity="top" />
+            android:id="@+id/layout_checkbox">
 
-        <TextView
-            android:id="@+id/text_recipe11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="effefwefwefwefwefwef"
-            android:textSize="18dp"
-            android:textStyle="bold|italic" />
-    </LinearLayout>
+            <ImageView
 
-<!--    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--        xmlns:tools="http://schemas.android.com/tools"-->
-<!--        android:layout_width="match_parent"-->
-<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/recipe_image"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:scaleType="fitXY"-->
-<!--            android:layout_height="420px" />-->
-
-<!--        <TextView-->
-<!--            android:layout_below="@+id/text_recipe11"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:text="effefwefwefwefwefwef"-->
-<!--            android:layout_height="wrap_content"-->
-
-<!--            />-->
-
-
-
-    <!--     android:layout_width="200dp"
+                android:id="@+id/recipe_image"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:padding="4dp"-->
+                android:gravity="top" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@drawable/side_nav_bar">
+
 
         <TextView
             android:id="@+id/title11"
@@ -86,7 +60,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary" />
+            android:background="@drawable/side_nav_bar" />
     </com.google.android.material.appbar.AppBarLayout>
 
 

@@ -5,7 +5,35 @@ public class ExampleItem {
     private String mText1;
     private String mText2;
     private String id;
-    String [] ingredients;
+    private String[] ingredients;
+    private Step[] descriptionSteps;
+
+    public static class Step {
+        String description;
+        String imageRef;
+
+        public Step(String description, String imageRef) {
+            this.description = description;
+            this.imageRef = imageRef;
+        }
+
+        public String getDescription() {
+
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public String getImageRef() {
+            return imageRef;
+        }
+
+        public void setImageRef(String imageRef) {
+            this.imageRef = imageRef;
+        }
+    }
 
 
     public String[] getIngredients() {
@@ -13,12 +41,12 @@ public class ExampleItem {
     }
 
 
-    public ExampleItem(String imageResource, String text1, String text2, String id, String[] ingredients) {
+    public ExampleItem(String imageResource, String text1, String text2, String id, String[] ingredients, Step[] description) {
         mImageResource = imageResource;
         mText1 = text1;
         mText2 = text2;
         this.id = id;
-
+        this.descriptionSteps = description;
         this.ingredients = ingredients;
     }
 
@@ -50,5 +78,13 @@ public class ExampleItem {
                 ", mText2='" + mText2 + '\'' +
                 ", id='" + id + '\'' +
                 '}';
+    }
+
+    public Step[] getDescription() {
+        return descriptionSteps;
+    }
+
+    public void setDescription(Step[] description) {
+        this.descriptionSteps = description;
     }
 }

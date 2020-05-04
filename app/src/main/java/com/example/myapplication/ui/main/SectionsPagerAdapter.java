@@ -2,13 +2,13 @@ package com.example.myapplication.ui.main;
 
 import android.content.Context;
 
+import com.example.myapplication.R;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.example.myapplication.R;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

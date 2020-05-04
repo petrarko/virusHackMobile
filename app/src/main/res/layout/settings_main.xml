@@ -1,49 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="@dimen/nav_header_height"
-android:background="@drawable/side_nav_bar"
-android:paddingBottom="@dimen/activity_vertical_margin"
-android:paddingLeft="@dimen/activity_horizontal_margin"
-android:paddingRight="@dimen/activity_horizontal_margin"
-android:paddingTop="@dimen/activity_vertical_margin"
-    android:id="@+id/setting_id"
-android:theme="@style/ThemeOverlay.AppCompat.Dark"
-android:orientation="vertical"
-android:gravity="bottom">
-<CheckBox android:id="@+id/checkbox_meat"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="meat"
-    android:onClick="onCheckboxClicked"/>
-<CheckBox android:id="@+id/checkbox_cheese"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="cheese"
-    android:onClick="onCheckboxClicked"/>
-
-<Button
-    android:id="@+id/button"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/button" />
+    android:layout_height="match_parent"
 
-<!--<SeekBar-->
-<!--    android:id="@+id/seekBar"-->
-<!--    style="@style/Widget.AppCompat.SeekBar.Discrete"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:max="10"-->
-<!--    android:progress="3" />-->
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        android:text="Range value to be change here" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/settings_lay"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:background="@drawable/side_nav_bar">
 
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/title11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="?actionBarSize"
+                android:padding="@dimen/appbar_padding"
+                android:text="Расскажите о своих предпочтениях"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+
+            android:text="Только вегетарианское" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+
+            android:text="Минимальная сумма рецепта: 0р, максимальная: 1500р"
+            android:textColor="#050505" />
+
+        <org.florescu.android.rangeseekbar.RangeSeekBar
+            android:id="@+id/seekBar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:absoluteMaxValue="0"
+            app:absoluteMinValue="1500" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:textColor="#050505"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+
+            android:text="Укажи свой уровень умения готовить." />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:numStars="6"
+            android:stepSize="1" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#050505"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:text="Ограничение по времени:" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:max="10"
+            android:progress="10" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

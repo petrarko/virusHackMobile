@@ -21,9 +21,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener   {
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
         public CardView cardView;
+
         public MyViewHolder(CardView v) {
             super(v);
             cardView = v;
@@ -46,17 +47,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     // Create new views (invoked by the layout manager)
     @Override
     public RecyclerAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                                     int viewType) {
+                                                           int viewType) {
         // create a new view
         CardView v = (CardView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_example, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         return vh;
     }
-
-
-
-
 
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -79,7 +76,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Main2Activity.class);
-                intent.putExtra("recipeId",mDataset[position].getId());
+                intent.putExtra("recipeId", mDataset[position].getId());
                 v.getContext().startActivity(intent);
             }
         });

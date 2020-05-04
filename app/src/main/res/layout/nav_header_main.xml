@@ -11,18 +11,24 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:orientation="vertical"
     android:gravity="bottom">
-    <ImageView android:id="@+id/imageView"
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/user_image"/>
-    <TextView android:layout_width="match_parent"
+        app:srcCompat="@mipmap/user_image" />
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Андрей Гительсон"/>
-    <TextView android:id="@+id/textView"
+        android:text="Андрей Гительсон" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Найди свой рецепт!"/>
+        android:text="Найди свой рецепт!" />
 </LinearLayout>
